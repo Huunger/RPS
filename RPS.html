@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// Change
+		function computerPlay() {
+			let computerChoice = Math.random();
+			if (computerChoice <= .3) {
+				return 'Rock';
+			}	else if (computerChoice <= .6) {
+				return 'Paper';
+			} else {
+				return 'Scissors';
+			}
+		}
+
+		function singleRound(playerSelection, computerSelection) {
+			var playerSelection = prompt('Rock, Paper, or Scissors?');
+			var computerSelection = computerPlay();
+			if (playerSelection === computerSelection){
+				return('It\s a tie.');
+			} else if(playerSelection === 'Rock' && computerSelection === 'Paper') {
+				return('You lose; Paper beats Rock');
+			}	else if (playerSelection === 'Paper' && computerSelection === 'Scissors'){
+				return('You lose; Scissors beats Paper');
+			} else if (playerSelection === 'Scissors' && computerSelection === 'Rock'){
+				return('You lose; Rock beats Scissors');
+			} else if(playerSelection === 'Rock' &&computerSelection === 'Scissors') {
+				return('You win; Rock beats Paper');
+			}	else if(playerSelection === 'Paper' && computerSelection ==='Rock') {
+				return('You win; Paper beats Rock');
+			}	else {
+				return('You win; Scissors beats Paper');
+			}
+		}
+
+		function game() {
+			for(let i = 0; i < 6; i++){
+				console.log(singleRound());
+			}
+		}
+
+
+
+
+	</script>
+
+</body>
+</html>
